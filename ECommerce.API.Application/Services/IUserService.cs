@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ECommerce.API.Application.DTOs.UserDTOs;
 
-namespace ECommerce.API.Application.Services
+namespace ECommerce.API.Application.Services;
+
+public interface IUserService
 {
-    class IUserService
-    {
-    }
+    Task<int> CreateUserAsync(CreateUserDto dto);
+    Task<UserResponseDto?> GetUserByIdAsync(int id);
+    Task<bool> UpdateUserAsync(int id, UpdateUserDto dto);
+    Task<UserResponseDto?> LoginAsync(LoginDto dto);
 }

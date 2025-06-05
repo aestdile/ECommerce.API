@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ECommerce.API.Application.DTOs.OrderDTOs;
 
-namespace ECommerce.API.Application.Services
+namespace ECommerce.API.Application.Services;
+
+public interface IOrderService
 {
-    class IOrderService
-    {
-    }
+    Task<int> CreateOrderAsync(CreateOrderDto dto);
+    Task<OrderResponseDto?> GetOrderByIdAsync(int id);
+    Task<List<OrderResponseDto>> GetUserOrdersAsync(int userId);
+    Task<bool> CancelOrderAsync(int orderId);
 }

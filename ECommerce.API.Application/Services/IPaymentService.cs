@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ECommerce.API.Domain.Entities.PaymentManagement;
 
-namespace ECommerce.API.Application.Services
+namespace ECommerce.API.Application.Services;
+
+public interface IPaymentService
 {
-    class IPaymentService
-    {
-    }
+    Task<bool> ProcessPaymentAsync(int orderId, PaymentMethod method, decimal amount);
+    Task<bool> RefundPaymentAsync(int orderId);
 }

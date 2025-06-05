@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace ECommerce.API.Application.Services;
 
-namespace ECommerce.API.Application.Services
+public interface IInventoryService
 {
-    class IInventoryService
-    {
-    }
+    Task<bool> ReduceStockAsync(int productId, int quantity);
+    Task<bool> IncreaseStockAsync(int productId, int quantity);
+    Task<int> GetStockQuantityAsync(int productId);
 }

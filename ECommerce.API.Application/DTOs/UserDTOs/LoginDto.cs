@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace ECommerce.API.Application.DTOs.UserDTOs;
 
-namespace ECommerce.API.Application.DTOs.UserDTOs
+public class LoginDto
 {
-    class LoginDto
-    {
-    }
+    public string Email { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
 }
